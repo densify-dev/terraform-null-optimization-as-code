@@ -23,7 +23,7 @@ module "optimization-as-code" {
   source  = "densify-dev/optimization-as-code/null"
   
   densify_recommendations = "${var.densify_recommendations}"
-  default_fallback = "${var.default_fallback}"
+  densify_fallback = "${var.densify_fallback}"
   densify_unique_id = "${var.name}"
 }
 ```
@@ -40,7 +40,7 @@ module "optimization-as-code" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | densify_recommendations | Map of maps that contains the recommendations from Densify | Map | - | Yes |
-| default_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yes |
+| densify_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yes |
 | densify_unique_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
 
 ## Outputs

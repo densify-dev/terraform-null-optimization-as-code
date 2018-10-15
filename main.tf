@@ -1,5 +1,5 @@
 locals{
-  temp_map = "${merge(map(var.densify_unique_id, var.default_fallback),var.densify_recommendations)}"
+  temp_map = "${merge(map(var.densify_unique_id, var.densify_fallback),var.densify_recommendations)}"
   densify_spec = "${local.temp_map[var.densify_unique_id]}"
   cur_type = "${lookup(local.densify_spec,"currentType","na")}"
   rec_type = "${lookup(local.densify_spec,"recommendedType","na")}"

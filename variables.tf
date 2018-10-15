@@ -5,7 +5,7 @@ variable "densify_recommendations"{
 variable "densify_unique_id" {
   description = "Unique ID that both Terraform and Densify can use to track the systems."
 }
-variable "default_fallback"{
+variable "densify_fallback"{
   description = "Fallback map of settings that are used for new infrastructure or systems that are missing sizing details from Densify."
   type = "map"
 }

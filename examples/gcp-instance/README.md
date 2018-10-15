@@ -17,7 +17,7 @@ $ terraform apply
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | densify_recommendations | Map of maps that contains the recommendations from Densify | Map | - | Yes |
-| default_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yyes |
+| densify_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yyes |
 | densify_unique_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
 
 ## Outputs
