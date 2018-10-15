@@ -37,7 +37,7 @@ resource "aws_db_instance" "create" {
     Densify-predicted-uptime = "${module.densify.predicted_uptime}"
     Densify-recommend-RI-coverage = "${module.densify.recommend_ri_coverage}"
 	#Should match the densify_unique_id value as this is how Densify references the system as unique
-	Densify-Terraform-ID = "${var.name}"
+	Densify-Unique-ID = "${var.name}"
   }
  
 }

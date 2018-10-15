@@ -24,7 +24,7 @@ resource "kubernetes_pod" "test-pod" {
 	  Densify-Recommended-CPU-Limit = "${module.densify.recommended_cpu_limit}"
 	  Densify-Recommended-Memory-Limit = "${module.densify.recommended_mem_limit}"
 	  #Should match the densify_unique_id value as this is how Densify references the system as unique
-	  Densify-Terraform-ID = "${var.name}"
+	  Densify-Unique-ID = "${var.name}"
     }
   }
 
