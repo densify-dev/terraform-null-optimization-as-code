@@ -19,9 +19,9 @@ This interface is based on densify.auto.tfvars, which is automatically generated
 ## Usage
 
 ```hcl
-module "densify" {
-  source  = "kgillan/densify/null"
-
+module "optimization-as-code" {
+  source  = "densify-dev/optimization-as-code/null"
+  
   densify_recommendations = "${var.densify_recommendations}"
   default_fallback = "${var.default_fallback}"
   densify_unique_id = "${var.name}"
