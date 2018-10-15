@@ -27,7 +27,7 @@ output "recommended_cpu_request" {
   value = "${local.rec_cpu_request}"
 }
 output "current_cpu_limit" {
-  description = "Current CPU limit for Kukbernetes"
+  description = "Current CPU limit for Kubernetes"
   value = "${local.cur_cpu_limit}"
 }
 output "recommended_cpu_limit" {

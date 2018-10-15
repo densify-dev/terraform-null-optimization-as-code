@@ -27,8 +27,13 @@ module "densify" {
   densify_unique_id = "${var.name}"
 }
 ```
-## Examples
-
+## Examples 
+* [AWS EC2](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/aws-ec2)
+* [AWS RDS](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/aws-rds)
+* [Azure VM](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/azure-vm)
+* [GCP Instance](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/gcp-instance)
+* [Kubernetes Pod](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/k8s-pod)
+* [Kubernetes Replication Controller](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/k8s-replication-controller)
 
 ## Inputs
 
@@ -49,7 +54,7 @@ module "densify" {
 | recommend_ri_coverage | Densify recommends purchasing reserved instance coverage for this instance |
 | current_cpu_request | Current CPU request for Kubernetes |
 | recommended_cpu_request | Recommended CPU request for Kubernetes |
-| current_cpu_limit | Current CPU limit for Kukbernetes |
+| current_cpu_limit | Current CPU limit for Kubernetes |
 | recommended_cpu_limit | Recommended CPU limit for Kubernetes |
 | current_mem_request | Current memory request for Kubernetes |
 | recommended_mem_request | Recommended memory request for Kubernetes |
