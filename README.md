@@ -23,8 +23,8 @@ module "densify" {
   source  = "kgillan/densify/null"
 
   densify_recommendations = "${var.densify_recommendations}"
-  densify_default = "${var.densify_default}"
-  densify_terraform_id = "${var.name}"
+  default_fallback = "${var.default_fallback}"
+  densify_unique_id = "${var.name}"
 }
 ```
 ## Examples
@@ -35,8 +35,8 @@ module "densify" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | densify_recommendations | Map of maps that contains the recommendations from Densify | Map | - | Yes |
-| densify_default | Default values to use if the system is not found in the results from Densify | Map | - | Yes |
-| densify_terraform_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
+| default_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yes |
+| densify_unique_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
 
 ## Outputs
 
@@ -55,11 +55,11 @@ module "densify" {
 | recommended_mem_request | Recommended memory request for Kubernetes |
 | current_mem_limit | Current memory limit for Kubernetes |
 | recommended_mem_limit | Recommended memory limit for Kubernetes |
-| approved_instance_type | The resulting instance size for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied |
-| cpu_request | The resulting CPU request for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied |
-| cpu_limit | The resulting CPU limit for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied |
-| mem_request | The resulting memory request for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied |
-| mem_limit | The resulting memory limit for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied |
+| instance_type | The instance size and family to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
+| cpu_request | The CPU request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
+| cpu_limit | The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
+| mem_request | The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
+| mem_limit | The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
 
 ## License
 

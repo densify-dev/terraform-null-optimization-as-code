@@ -5,9 +5,9 @@ module "densify" {
   source  = "../.."
 
   densify_recommendations = "${var.densify_recommendations}"
-  densify_default = "${var.densify_default}"
+  default_fallback = "${var.default_fallback}"
   # In this sample we are using the system name as the unique idenifier but if you had multiple systems that had the same name this should be set uniquely to make sure the correct recommendations are set\applied for each system.
-  densify_terraform_id = "${var.name}"
+  densify_unique_id = "${var.name}"
 }
 
 resource "azurerm_resource_group" "test" {
@@ -60,7 +60,7 @@ resource "azurerm_virtual_machine" "test" {
   #vm_size = "Standard_DS2_v2"
 
   # new self-optimizing instance type from Densify
-  vm_size = "${module.densify.approved_instance_type}"
+  vm_size = "${module.densify.instance_type}"
  
   delete_os_disk_on_termination = true
   delete_data_disks_on_termination = true
@@ -97,7 +97,7 @@ resource "azurerm_virtual_machine" "test" {
     Densify-potential-monthly-savings = "${module.densify.savings_estimate}"
     Densify-predicted-uptime = "${module.densify.predicted_uptime}"
     Densify-recommend-RI-coverage = "${module.densify.recommend_ri_coverage}"
-	#Should match the densify_terraform_id value as this is how Densify references the system as unique
+	#Should match the densify_unique_id value as this is how Densify references the system as unique
 	Densify-Terraform-ID = "${var.name}"
   }
 }

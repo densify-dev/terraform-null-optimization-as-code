@@ -50,23 +50,23 @@ output "recommended_mem_limit" {
   description = "Recommended memory limit for Kubernetes"
   value = "${local.rec_mem_limit}"
 }
-output "approved_instance_type" {
-  description = "The resulting instance size for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied"
-  value = "${local.approved_instance_type}"
+output "instance_type" {
+  description = "The instance size and family to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  value = "${local.instance_type}"
 }
 output "cpu_request" {
-  description = "The resulting CPU request for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied"
+  description = "The CPU request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.cpu_request}"
 }
 output "cpu_limit" {
-  description = "The resulting CPU limit for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied"
+  description = "The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.cpu_limit}"
 }
 output "mem_request" {
-  description = "The resulting memory request for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied"
+  description = "The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.mem_request}"
 }
 output "mem_limit" {
-  description = "The resulting memory limit for implementation based on the recommended or current size with Densify self-optimize policy and approval settings applied"
+  description = "The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.mem_limit}"
 }

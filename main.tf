@@ -1,6 +1,6 @@
 locals{
-  temp_map = "${merge(map(var.densify_terraform_id, var.densify_default),var.densify_recommendations)}"
-  densify_spec = "${local.temp_map[var.densify_terraform_id]}"
+  temp_map = "${merge(map(var.densify_unique_id, var.default_fallback),var.densify_recommendations)}"
+  densify_spec = "${local.temp_map[var.densify_unique_id]}"
   cur_type = "${lookup(local.densify_spec,"currentType","na")}"
   rec_type = "${lookup(local.densify_spec,"recommendedType","na")}"
   savings = "${lookup(local.densify_spec,"savingsEstimate","na")}"
@@ -20,7 +20,7 @@ locals{
   rec_mem_limit = "${lookup(local.densify_spec,"recommendedMemoryLimit","na")}"
   cur_mem_limit = "${lookup(local.densify_spec,"currentMemoryLimit","na")}"
   
-  approved_instance_type = "${local.cur_type == "na" ?
+  instance_type = "${local.cur_type == "na" ?
 		"na" : 
 		local.recommendation_type == "Terminate" ? 
 			local.cur_type:
@@ -60,6 +60,6 @@ locals{
 }
 
 resource "null_resource" "densify_spec" {
-  triggers = "${local.temp_map[var.densify_terraform_id]}"
+  triggers = "${local.temp_map[var.densify_unique_id]}"
 }
  

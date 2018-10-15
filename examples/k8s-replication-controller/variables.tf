@@ -25,7 +25,7 @@ variable "densify_recommendations" {
 
 # Defaults this is used for fallback if the system name isn't found in the densify_recommendations. 
 # This shouldn't be used in most cases likely use would be if you were to create a new system that hasn't been analyzed by Densify yet.
-variable "densify_default"{
+variable "default_fallback"{
   type = "map"
   default = {
 	recommendedCPURequest = "50m"
