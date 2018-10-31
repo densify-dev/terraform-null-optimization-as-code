@@ -1,6 +1,8 @@
 # AWS RDS sample of self-aware and self-optimization
 
-Configuration in this directory creates a single MySQL RDS Instance named testdb that has its size set based on the values in the densify_recommendations which is a sample of the format that would get from Densify. Also this will set a number of tags on the instance to make it self-aware. 
+This example creates a single MySQL RDS instance named "testdb" from sizing values in densify_recommendations. 
+It also sets a number of tags on the RDS instance to make it "self-aware".
+The sample densify_recommendations map found in this directory is in the same format that Densify would provide. 
 
 ## Usage
 
@@ -16,10 +18,10 @@ $ terraform apply
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| densify_recommendations | Map of maps that contains the recommendations from Densify | Map | - | Yes |
-| densify_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yyes |
-| densify_unique_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
+| densify_recommendations | Map variable containing recommendations from Densify | Map | - | Yes |
+| densify_fallback | The map default values used if Densify recommendations are not available | Map | - | Yyes |
+| densify_unique_id | The unique identifier of the system to be updated | String | - | Yes |
 
 ## Outputs
 
-Will create an RDS instance in AWS based on sizing from sample densify_recommendations
+Creates an AWS RDS instance based on sizing values from densify_recommendations map sample.
