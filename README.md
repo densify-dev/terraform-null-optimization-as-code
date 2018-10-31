@@ -47,8 +47,8 @@ module "optimization-as-code" {
 
 | Name | Description |
 |------|-------------|
-| Current_type | Current instance size |
-| recommended_type | Densify recommended instance size |
+| Current_type | Current instance size and family |
+| recommended_type | Densify recommended instance size and family |
 | savings_estimate | The potential monthly savings from modifying the current instance to the Densify recommended instance |
 | predicted_uptime | The predicted percentage of CPU utilization hours over the duration of a month |
 | recommend_ri_coverage | Densify recommends purchasing reserved instance coverage for this instance |
