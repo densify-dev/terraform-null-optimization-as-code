@@ -39,9 +39,9 @@ module "optimization-as-code" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| densify_recommendations | Map of maps that contains the recommendations from Densify | Map | - | Yes |
-| densify_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yes |
-| densify_unique_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
+| densify_recommendations | Map variable containing recommendations from Densify | Map | - | Yes |
+| densify_fallback | The map default values used if Densify recommendations are not available | Map | - | Yes |
+| densify_unique_id | The unique identifier of the system to be updated | String | - | Yes |
 
 ## Outputs
 
