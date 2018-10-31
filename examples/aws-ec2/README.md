@@ -1,6 +1,8 @@
 # AWS EC2 sample of self-aware and self-optimization
 
-Configuration in this directory creates a single EC2 Instance named test that has its size set based on the values in the densify_recommendations which is a sample of the format that would get from Densify. Also this will set a number of tags on the instance to make it self-aware. 
+This example creates a single EC2 instance named "test" from the sizing values in densify_recommendations. 
+It also sets a number of tags on the EC2 instance to make it "self-aware".
+The sample densify_recommendations map found in this directory is in the same format that Densify would provide.  
 
 ## Usage
 
@@ -22,4 +24,4 @@ $ terraform apply
 
 ## Outputs
 
-Will create an instance in AWS based on sizing from sample densify_recommendations
+Creates an AWS EC2 instance based on sizing values from densify_recommendations map sample.
