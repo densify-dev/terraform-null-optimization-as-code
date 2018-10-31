@@ -1,6 +1,8 @@
 # Kubernetes Pod sample of self-aware and self-optimization
 
-Configuration in this directory creates a single container in a Pod named test that has its size set based on the values in the densify_recommendations which is a sample of the format that would get from Densify. Also this will set a number of labels on the container to make it self-aware. 
+This example creates a single Container in a Pod named "test" in Kubernetes from sizing values in the densify_recommendations map. 
+It also sets a number of labels on the Containter to make it "self-aware".
+The sample densify_recommendations map found in this directory is in the same format that Densify would provide.
 
 ## Usage
 
@@ -16,10 +18,10 @@ $ terraform apply
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| densify_recommendations | Map of maps that contains the recommendations from Densify | Map | - | Yes |
-| densify_fallback | Default values to use if the system is not found in the results from Densify | Map | - | Yyes |
-| densify_unique_id | System identifier to uniquely identify which system is being updated | String | - | Yes |
+| densify_recommendations | Map variable containing recommendations from Densify | Map | - | Yes |
+| densify_fallback | The map default values used if Densify recommendations are not available | Map | - | Yyes |
+| densify_unique_id | The unique identifier of the system to be updated | String | - | Yes |
 
 ## Outputs
 
-Will create an Pod containing 1 container in Kubernetes based on sizing from sample densify_recommendations
+Creates a Pod containing one Container in Kubernetes based on sizing from densify_recommendations map sample.
