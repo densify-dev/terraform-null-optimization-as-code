@@ -19,6 +19,12 @@ locals{
   cur_mem_request = "${lookup(local.densify_spec,"currentMemoryRequest","na")}"
   rec_mem_limit = "${lookup(local.densify_spec,"recommendedMemoryLimit","na")}"
   cur_mem_limit = "${lookup(local.densify_spec,"currentMemoryLimit","na")}"
+  min_group_current = "${lookup(local.densify_spec,"minGroupCurrent","-1")}"
+  min_group_recommended = "${lookup(local.densify_spec,"minGroupRecommended","-1")}"
+  max_group_current = "${lookup(local.densify_spec,"maxGroupCurrent","-1")}"
+  max_group_recommended = "${lookup(local.densify_spec,"maxGroupRecommended","-1")}"
+  avg_inst_count_recommended = "${lookup(local.densify_spec,"avgInstanceCountRecommended","-1")}"
+  current_desired_capacity = "${lookup(local.densify_spec,"currentDesiredCapacity","-1")}"
   
   instance_type = "${local.cur_type == "na" ?
 		"na" : 
@@ -57,6 +63,21 @@ locals{
 			local.appr_type == local.rec_mem_limit ? 
 				local.rec_mem_limit : 
 				local.cur_mem_limit}"
+  desired_capacity = "${local.current_desired_capacity == "-1" ?
+		"-1" : 
+		local.appr_type == "all" ? 
+			floor(local.avg_inst_count_recommended) : 
+			local.current_desired_capacity}"
+  min_group = "${local.min_group_current == "-1" ?
+		"-1" : 
+		local.appr_type == "all" ? 
+			local.min_group_recommended : 
+			local.min_group_current}"
+  max_group = "${local.max_group_current == "-1" ?
+		"-1" : 
+		local.appr_type == "all" ? 
+			local.max_group_recommended : 
+			local.max_group_current}"
 }
 
 resource "null_resource" "densify_spec" {
