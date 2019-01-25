@@ -1,12 +1,12 @@
 # AWS ASG sample of self-aware and self-optimization
 
-This example creates a single ASG group named "test" from the sizing values in densify_recommendations. 
-It also sets a number of tags on the ASG group to make it "self-aware".
-The sample densify_recommendations map found in this directory is in the same format that Densify would provide.  
+This example creates a single Auto Scaling group (ASG) named "test" from the sizing values in the densify_recommendations map. 
+It also assigns a number of tags to the ASG, making it "self-aware".
+Densify provide recommendations in terraform-map format similar to the sample densify_recommendations map found in this directory.  
 
 ## Usage
 
-To run this example you need to execute:
+To run this example, you need to execute:
 
 ```bash
 $ terraform init
@@ -20,8 +20,8 @@ $ terraform apply
 |------|-------------|:----:|:-----:|:-----:|
 | densify_recommendations | Map variable containing recommendations from Densify | Map | - | Yes |
 | densify_fallback | The map default values used if Densify recommendations are not available | Map | - | Yyes |
-| densify_unique_id | The unique identifier of the system to be updated | String | - | Yes |
+| densify_unique_id | The unique identifier of the ASG to be updated | String | - | Yes |
 
 ## Outputs
 
-Creates an AWS ASG Group based on sizing values from densify_recommendations map sample.
+Creates an AWS ASG based on sizing values from densify_recommendations map.
