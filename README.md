@@ -69,15 +69,15 @@ module "optimization-as-code" {
 | cpu_limit | The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
 | mem_request | The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
 | mem_limit | The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| min_group_current | The current minimum size of the ASG group |
-| min_group_recommended | The recommended minimum size of the ASG group |
-| max_group_current | The current maximum size of the ASG group |
-| max_group_recommended | The recommended maximum size of the ASG group |
-| min_group | The minimum size to be implemented, which is either the current minimum size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| max_group | The maximum size to be implemented, which is either the current maximum size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| avg_inst_count_recommended | The average number of instances running in the ASG group |
-| current_desired_capacity | The current desired number of instances running in the ASG group |
-| desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the average instance count recommendation rounded down, depending on the automation policy and the approval status (if approval is enabled) |
+| min_group_current | The current minimum group size of the ASG |
+| min_group_recommended | The recommended minimum group size of the ASG |
+| max_group_current | The current maximum group size of the ASG |
+| max_group_recommended | The recommended maximum group size of the ASG |
+| min_group | The minimum group size to be implemented, which is either the current minimum group size or the Densify recommended minimum group size depending on the automation policy and approval status (if approval is enabled) |
+| max_group | The maximum group size to be implemented, which is either the current maximum group size or the Densify recommended maximum group size depending on the automation policy and approval status (if approval is enabled) |
+| avg_inst_count_recommended | The predicted average number of instances running in the ASG if the recommendations are implemented |
+| current_desired_capacity | The current desired number of instances running in the ASG |
+| desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled) |
 
 ## License
 
