@@ -71,31 +71,31 @@ output "mem_limit" {
   value = "${local.mem_limit}"
 }
 output "min_group_current" {
-  description = "The current minimum size of the ASG group"
+  description = "The current minimum group size of the ASG"
   value = "${local.min_group_current}"
 }
 output "min_group_recommended" {
-  description = "The recommended minimum size of the ASG group"
+  description = "The recommended minimum group size of the ASG"
   value = "${local.min_group_recommended}"
 }
 output "max_group_current" {
-  description = "The current maximum size of the ASG group"
+  description = "The current maximum group size of the ASG"
   value = "${local.max_group_current}"
 }
 output "max_group_recommended" {
-  description = "The recommended maximum size of the ASG group"
+  description = "The recommended maximum group size of the ASG"
   value = "${local.max_group_recommended}"
 }
 output "min_group" {
-  description = "The minimum size to be implemented, which is either the current minimum size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The minimum group size to be implemented, which is either the current minimum group size or the Densify recommended minimum group size depending on the automation policy and approval status (if approval is enabled)"
   value = "${local.min_group}"
 }
 output "max_group" {
-  description = "The maximum size to be implemented, which is either the current maximum size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The maximum group size to be implemented, which is either the current maximum group size or the Densify recommended maximum group size depending on the automation policy and approval status (if approval is enabled)"
   value = "${local.max_group}"
 }
 output "avg_inst_count_recommended" {
-  description = "The average number of instances running in the ASG group"
+  description = "The predicted average number of instances running in the ASG if the recommendations are implemented"
   value = "${local.avg_inst_count_recommended}"
 }
 output "current_desired_capacity" {
@@ -103,6 +103,6 @@ output "current_desired_capacity" {
   value = "${local.current_desired_capacity}"
 }
 output "desired_capacity" {
-  description = "The desired capacity to be implemented, which is either the current desired capacity or the average instance count recommendation rounded down, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled)"
   value = "${local.desired_capacity}"
 }
