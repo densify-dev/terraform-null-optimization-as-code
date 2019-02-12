@@ -17,7 +17,7 @@ The result is next-generation resource optimization with the elimination of hard
 - [License](#license)
 
 ## Requirements
-- Densify account, which is provided with a Densify subscription or free trial (www.densify.com/trial)
+- Densify account, which is provided with a Densify subscription or free trial (www.densify.com/service/signup)
 
 
 ## Usage
@@ -51,38 +51,38 @@ module "optimization-as-code" {
 
 | Name | Description |
 |------|-------------|
-| Current_type | Current instance size and family |
-| recommended_type | Densify recommended instance size and family |
-| savings_estimate | The potential monthly savings from modifying the current instance to the Densify recommended instance |
-| predicted_uptime | The predicted percentage of CPU utilization hours over the duration of a month |
-| recommend_ri_coverage | Densify recommends purchasing reserved instance coverage for this instance |
-| current_cpu_request | Current CPU request for Kubernetes |
-| recommended_cpu_request | Recommended CPU request for Kubernetes |
-| current_cpu_limit | Current CPU limit for Kubernetes |
-| recommended_cpu_limit | Recommended CPU limit for Kubernetes |
-| current_mem_request | Current memory request for Kubernetes |
-| recommended_mem_request | Recommended memory request for Kubernetes |
-| current_mem_limit | Current memory limit for Kubernetes |
-| recommended_mem_limit | Recommended memory limit for Kubernetes |
-| instance_type | The instance size and family to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| cpu_request | The CPU request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| cpu_limit | The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| mem_request | The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| mem_limit | The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled) |
-| min_group_current | The current minimum group size of the ASG |
-| min_group_recommended | The recommended minimum group size of the ASG |
-| max_group_current | The current maximum group size of the ASG |
-| max_group_recommended | The recommended maximum group size of the ASG |
-| min_group | The minimum group size to be implemented, which is either the current minimum group size or the Densify recommended minimum group size depending on the automation policy and approval status (if approval is enabled) |
-| max_group | The maximum group size to be implemented, which is either the current maximum group size or the Densify recommended maximum group size depending on the automation policy and approval status (if approval is enabled) |
-| avg_inst_count_recommended | The predicted average number of instances running in the ASG if the recommendations are implemented |
-| current_desired_capacity | The current desired number of instances running in the ASG |
-| desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled) |
-| display_name | The display name of the container which is combination of the Pod\Service name and Container name |
-| cluster | The name of the cluster the container is running in |
-| namespace | The namespace the container is running in |
-| pod_service | The pod or service name the container is running in. If it is a single pod it will be the pod name otherwise if the container is part of a service such as Replication Controller, Replica Set it will be the name of the service |
-| container | The name of the container |
+| current_type | Current instance size and family. |
+| recommended_type | Densify recommended instance size and family. |
+| savings_estimate | The potential monthly savings from modifying the current instance to the Densify recommended instance. |
+| predicted_uptime | The predicted percentage of CPU utilization hours over the duration of a month. |
+| recommend_ri_coverage | Densify recommends purchasing reserved instance coverage for this instance. |
+| current_cpu_request | The current CPU request configured for the Kubernetes container. |
+| recommended_cpu_request | The recommended CPU request for the Kubernetes container. |
+| current_cpu_limit | The current CPU limit configured for the Kubernetes container. |
+| recommended_cpu_limit | The recommended CPU limit for the Kubernetes container. |
+| current_mem_request | The current memory request configured for the Kubernetes container. |
+| recommended_mem_request | The recommended memory request for the Kubernetes container. |
+| current_mem_limit | The current memory limit configured for the Kubernetes container. |
+| recommended_mem_limit | The recommended memory limit for the Kubernetes container. |
+| instance_type | The instance size and family to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| cpu_request | The CPU request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| cpu_limit | The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| mem_request | The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| mem_limit | The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| min_group_current | The current minimum group size of the ASG. |
+| min_group_recommended | The recommended minimum group size for the ASG. |
+| max_group_current | The current maximum group size of the ASG. |
+| max_group_recommended | The recommended maximum group size for the ASG. |
+| min_group | The minimum group size to be implemented, which is either the current minimum group size or the Densify recommended minimum group size depending on the automation policy and approval status (if approval is enabled). |
+| max_group | The maximum group size to be implemented, which is either the current maximum group size or the Densify recommended maximum group size depending on the automation policy and approval status (if approval is enabled). |
+| avg_inst_count_recommended | The predicted average number of instances running in the ASG if the recommendations are implemented. |
+| current_desired_capacity | The current desired number of instances running in the ASG. |
+| desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled). |
+| display_name | The display name of the container, which is a combination of the pod\service name and the container name. |
+| cluster | The name of the cluster with the running container. |
+| namespace | The namespace for the running container. |
+| pod_service | The pod or service name that the container is running in. If the container is running in a single pod, then the pod name is displayed. If the container is part of a service, such as a Replication Controller or Replica Set, then the service name is displayed.  |
+| container | The name of the container. |
 
 ## License
 
