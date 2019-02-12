@@ -6,7 +6,7 @@ The sample densify_recommendations map found in this directory is in the Densify
 
 ## Usage
 
-To run this example you need to execute:
+To run this example, you need to execute:
 
 ```bash
 $ terraform init
