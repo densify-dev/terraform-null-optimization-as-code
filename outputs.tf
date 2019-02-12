@@ -1,9 +1,9 @@
 output "Current_type" {
-  description = "Current instance size"
+  description = "Current instance size and family"
   value = "${local.cur_type}"
 }
 output "recommended_type" {
-  description = "Densify recommended instance size"
+  description = "Densify recommended instance size and family"
   value = "${local.rec_type}"
 }
 output "savings_estimate" {
@@ -19,35 +19,35 @@ output "recommend_ri_coverage" {
   value = "${local.ri_cover}"
 }
 output "current_cpu_request" {
-  description = "Current CPU request for Kubernetes"
+  description = "Current CPU request for the Kubernetes container"
   value = "${local.cur_cpu_request}"
 }
 output "recommended_cpu_request" {
-  description = "Recommended CPU request for Kubernetes"
+  description = "Recommended CPU request for the Kubernetes container"
   value = "${local.rec_cpu_request}"
 }
 output "current_cpu_limit" {
-  description = "Current CPU limit for Kubernetes"
+  description = "Current CPU limit for the Kubernetes container"
   value = "${local.cur_cpu_limit}"
 }
 output "recommended_cpu_limit" {
-  description = "Recommended CPU limit for Kubernetes"
+  description = "Recommended CPU limit for the Kubernetes container"
   value = "${local.rec_cpu_limit}"
 }
 output "current_mem_request" {
-  description = "Current memory request for Kubernetes"
+  description = "Current memory request for the Kubernetes container"
   value = "${local.cur_mem_request}"
 }
 output "recommended_mem_request" {
-  description = "Recommended memory request for Kubernetes"
+  description = "Recommended memory request for the Kubernetes container"
   value = "${local.rec_mem_request}"
 }
 output "current_mem_limit" {
-  description = "Current memory limit for Kubernetes"
+  description = "Current memory limit for the Kubernetes container"
   value = "${local.cur_mem_limit}"
 }
 output "recommended_mem_limit" {
-  description = "Recommended memory limit for Kubernetes"
+  description = "Recommended memory limit for the Kubernetes container"
   value = "${local.rec_mem_limit}"
 }
 output "instance_type" {
@@ -55,19 +55,19 @@ output "instance_type" {
   value = "${local.instance_type}"
 }
 output "cpu_request" {
-  description = "The CPU request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The CPU request to be implemented, which is either the current CPU request or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.cpu_request}"
 }
 output "cpu_limit" {
-  description = "The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The CPU limit to be implemented, which is either the current CPU limit or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.cpu_limit}"
 }
 output "mem_request" {
-  description = "The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The memory request to be implemented, which is either the current memory request or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.mem_request}"
 }
 output "mem_limit" {
-  description = "The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
+  description = "The memory limit to be implemented, which is either the current memory limit or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled)"
   value = "${local.mem_limit}"
 }
 output "min_group_current" {
@@ -107,19 +107,19 @@ output "desired_capacity" {
   value = "${local.desired_capacity}"
 }
 output "display_name" {
-  description = "The display name of the container which is combination of the Pod\Service name and Container name"
+  description = "The display name of the container, which is combination of the pod\service name and container name"
   value = "${local.display_name}"
 }
 output "cluster" {
-  description = "The name of the cluster the container is running in"
+  description = "The name of the cluster with the running container"
   value = "${local.cluster}"
 }
 output "namespace" {
-  description = "The namespace the container is running in"
+  description = "The namespace of the running container"
   value = "${local.namespace}"
 }
 output "pod_service" {
-  description = "The pod or service name the container is running in. If it is a single pod it will be the pod name otherwise if the container is part of a service such as Replication Controller, Replica Set it will be the name of the service"
+  description = "The pod or service name of the running container. If the container is running in a single pod, then the pod name is displayed. If the container is part of a service, such as a Replication Controller or a Replica Set, then the service name is displayed."
   value = "${local.pod_service}"
 }
 output "container" {
