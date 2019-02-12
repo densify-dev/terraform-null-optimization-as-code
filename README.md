@@ -65,10 +65,10 @@ module "optimization-as-code" {
 | current_mem_limit | The current memory limit configured for the Kubernetes container. |
 | recommended_mem_limit | The recommended memory limit for the Kubernetes container. |
 | instance_type | The instance size and family to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
-| cpu_request | The CPU request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
-| cpu_limit | The CPU limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
-| mem_request | The memory request to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
-| mem_limit | The memory limit to be implemented, which is either the current size or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| cpu_request | The CPU request to be implemented, which is either the current CPU request or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| cpu_limit | The CPU limit to be implemented, which is either the current CPU limit or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| mem_request | The memory request to be implemented, which is either the current memory request or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
+| mem_limit | The memory limit to be implemented, which is either the current memory limit or the Densify recommendation, depending on the automation policy and the approval status (if approval is enabled). |
 | min_group_current | The current minimum group size of the ASG. |
 | min_group_recommended | The recommended minimum group size for the ASG. |
 | max_group_current | The current maximum group size of the ASG. |
@@ -81,7 +81,7 @@ module "optimization-as-code" {
 | display_name | The display name of the container, which is a combination of the pod\service name and the container name. |
 | cluster | The name of the cluster with the running container. |
 | namespace | The namespace for the running container. |
-| pod_service | The pod or service name that the container is running in. If the container is running in a single pod, then the pod name is displayed. If the container is part of a service, such as a Replication Controller or Replica Set, then the service name is displayed.  |
+| pod_service | The pod or service name that the container is running in. If the container is running in a single pod, then the pod name is displayed. If the container is part of a service, such as a Replication Controller or Replica Set, then the service name is displayed. |
 | container | The name of the container. |
 
 ## License
