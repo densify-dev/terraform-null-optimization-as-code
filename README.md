@@ -78,6 +78,11 @@ module "optimization-as-code" {
 | avg_inst_count_recommended | The predicted average number of instances running in the ASG if the recommendations are implemented |
 | current_desired_capacity | The current desired number of instances running in the ASG |
 | desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled) |
+| display_name | The display name of the container which is combination of the Pod\Service name and Container name |
+| cluster | The name of the cluster the container is running in |
+| namespace | The namespace the container is running in |
+| pod_service | The pod or service name the container is running in. If it is a single pod it will be the pod name otherwise if the container is part of a service such as Replication Controller, Replica Set it will be the name of the service |
+| container | The name of the container |
 
 ## License
 

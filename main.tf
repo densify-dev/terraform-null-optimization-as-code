@@ -25,6 +25,11 @@ locals{
   max_group_recommended = "${lookup(local.densify_spec,"maxGroupRecommended","-1")}"
   avg_inst_count_recommended = "${lookup(local.densify_spec,"avgInstanceCountRecommended","-1")}"
   current_desired_capacity = "${lookup(local.densify_spec,"currentDesiredCapacity","-1")}"
+  display_name = "${lookup(local.densify_spec,"displayName","na")}"
+  cluster = "${lookup(local.densify_spec,"cluster","na")}"
+  namespace = "${lookup(local.densify_spec,"namespace","na")}"
+  pod_service = "${lookup(local.densify_spec,"podService","na")}"
+  container = "${lookup(local.densify_spec,"container","na")}"
   
   instance_type = "${local.cur_type == "na" ?
 		"na" : 

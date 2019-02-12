@@ -106,3 +106,23 @@ output "desired_capacity" {
   description = "The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled)"
   value = "${local.desired_capacity}"
 }
+output "display_name" {
+  description = "The display name of the container which is combination of the Pod\Service name and Container name"
+  value = "${local.display_name}"
+}
+output "cluster" {
+  description = "The name of the cluster the container is running in"
+  value = "${local.cluster}"
+}
+output "namespace" {
+  description = "The namespace the container is running in"
+  value = "${local.namespace}"
+}
+output "pod_service" {
+  description = "The pod or service name the container is running in. If it is a single pod it will be the pod name otherwise if the container is part of a service such as Replication Controller, Replica Set it will be the name of the service"
+  value = "${local.pod_service}"
+}
+output "container" {
+  description = "The name of the container"
+  value = "${local.container}"
+}
