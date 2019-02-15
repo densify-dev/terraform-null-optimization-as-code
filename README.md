@@ -32,12 +32,14 @@ module "optimization-as-code" {
 }
 ```
 ## Examples 
+* [AWS ASG](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/aws-asg)
 * [AWS EC2](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/aws-ec2)
 * [AWS RDS](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/aws-rds)
 * [Azure VM](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/azure-vm)
 * [GCP Instance](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/gcp-instance)
 * [Kubernetes Pod](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/k8s-pod)
 * [Kubernetes Replication Controller](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/k8s-replication-controller)
+* [Kubernetes Deployment](https://github.com/densify-dev/terraform-null-optimization-as-code/tree/master/examples/k8s-deployment)
 
 ## Inputs
 
