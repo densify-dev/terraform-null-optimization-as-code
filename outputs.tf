@@ -107,7 +107,7 @@ output "desired_capacity" {
   value = "${local.desired_capacity}"
 }
 output "display_name" {
-  description = "The display name of the container, which is combination of the pod\service name and container name"
+  description = "The display name of the container, which is combination of the pod or service name and container name"
   value = "${local.display_name}"
 }
 output "cluster" {
