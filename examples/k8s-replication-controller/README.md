@@ -19,7 +19,7 @@ $ terraform apply
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | densify_recommendations | Map variable containing recommendations from Densify | Map | - | Yes |
-| densify_fallback | The map default values used if Densify recommendations are not available | Map | - | Yyes |
+| densify_fallback | The default map values that are used if Densify recommendations are not available | Map | - | Yes |
 | densify_unique_id | SThe unique identifier of the system to be updated | String | - | Yes |
 
 ## Outputs
