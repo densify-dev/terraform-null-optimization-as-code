@@ -147,6 +147,6 @@ output "effort" {
   value       = local.effort
 }
 output "policy" {
-  description = "The policy is used by the analysis"
+  description = "The policy used by the analysis"
   value       = local.policy
 }
