@@ -36,6 +36,10 @@ locals {
   container                  = lookup(local.densify_spec, "container", "na")
   controller_type            = lookup(local.densify_spec, "controllerType", "na")
   current_size               = lookup(local.densify_spec, "currentCount", "-1")
+  power_state                = lookup(local.densify_spec, "powerState", "na")
+  defer_recommendation       = lookup(local.densify_spec, "deferRecommendation", "na")
+  defer_until                = lookup(local.densify_spec, "deferUntil", "na")
+  avg_inst_count_current     = lookup(local.densify_spec, "avgInstanceCountCurrent", "-1")
 
   instance_type = local.cur_type == "na" ? "na" : local.recommendation_type == "Terminate" ? local.cur_type : local.appr_type == "all" ? local.rec_type : local.appr_type == local.rec_type ? local.rec_type : local.cur_type
 

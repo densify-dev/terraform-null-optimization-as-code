@@ -77,6 +77,7 @@ module "optimization-as-code" {
 | max_group_recommended | The recommended maximum group size for the ASG. |
 | min_group | The minimum group size to be implemented, which is either the current minimum group size or the Densify recommended minimum group size depending on the automation policy and approval status (if approval is enabled). |
 | max_group | The maximum group size to be implemented, which is either the current maximum group size or the Densify recommended maximum group size depending on the automation policy and approval status (if approval is enabled). |
+| avg_inst_count_current | The current average number of instances running in the ASG. |
 | avg_inst_count_recommended | The predicted average number of instances running in the ASG if the recommendations are implemented. |
 | current_desired_capacity | The current desired number of instances running in the ASG. |
 | desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled). |
@@ -91,6 +92,9 @@ module "optimization-as-code" {
 | recommendation_type | The type of recommendation (Upsize, Downsize, Resize, Just Right). |
 | effort | The effort rating for implementing the recommendation. |
 | policy | The policy is used by the analysis. |
+| power_state | The power state of the instance. |
+| defer_recommendation | Defer recommending an instance type change until reserved instance coverage for this instance expires. |
+| defer_until | If deferRecommendation = yes, then the expiry date of the RI providing coverage for the current instance is returned. |
 
 ## License
 

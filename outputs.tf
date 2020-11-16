@@ -150,3 +150,19 @@ output "policy" {
   description = "The policy that is used in the analysis"
   value       = local.policy
 }
+output "power_state" {
+  description = "The power state of the instance"
+  value       = local.power_state
+}
+output "defer_recommendation" {
+  description = "Defer recommending an instance type change until reserved instance coverage for this instance expires"
+  value       = local.defer_recommendation
+}
+output "defer_until" {
+  description = "If deferRecommendation = yes, then the expiry date of the RI providing coverage for the current instance is returned"
+  value       = local.defer_until
+}
+output "avg_inst_count_current" {
+  description = "The current average number of instances running in the ASG"
+  value       = local.avg_inst_count_current
+}
