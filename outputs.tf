@@ -15,7 +15,7 @@ output "predicted_uptime" {
   value       = local.p_uptime
 }
 output "implementation_method" {
-  description = "The system configured to allow automated or manual recommendations"
+  description = "Is the system configured to allow automation or manual recommendations"
   value       = local.implementation_method
 }
 output "current_cpu_request" {
@@ -107,7 +107,7 @@ output "desired_capacity" {
   value       = local.desired_capacity
 }
 output "display_name" {
-  description = "The display name of the container, which is a combination of the pod or service name and container name"
+  description = "The display name of the container, which is combination of the pod or service name and container name"
   value       = local.display_name
 }
 output "cluster" {
@@ -127,11 +127,11 @@ output "container" {
   value       = local.container
 }
 output "controller_type" {
-  description = "The type of the controller"
+  description = "The type of controller"
   value       = local.controller_type
 }
 output "current_size" {
-  description = "The current number of copies of the controller that are running. The value will be 1 for individual pods"
+  description = "The current number of copies of the controller that are running. Will be 1 for individual pods"
   value       = local.current_size
 }
 output "approval_type" {
@@ -139,7 +139,7 @@ output "approval_type" {
   value       = local.appr_type
 }
 output "recommendation_type" {
-  description = "The type of recommendation (Upsize, Downsize, Resize, Just Right)"
+  description = "The type of recommendation (upsize, downsize, resize, just right)"
   value       = local.recommendation_type
 }
 output "effort" {
@@ -147,6 +147,6 @@ output "effort" {
   value       = local.effort
 }
 output "policy" {
-  description = "The policy used by the analysis"
+  description = "The policy that is used in the analysis"
   value       = local.policy
 }
