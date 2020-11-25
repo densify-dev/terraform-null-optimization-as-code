@@ -53,11 +53,11 @@ module "optimization-as-code" {
 
 | Name | Description |
 |------|-------------|
-| Current_type | Current instance size and family. |
+| current_type | Current instance size and family. |
 | recommended_type | Densify recommended instance size and family. |
 | savings_estimate | The potential monthly savings from modifying the current instance to the Densify recommended instance. |
 | predicted_uptime | The predicted percentage of CPU utilization hours over the duration of a month. |
-| recommend_ri_coverage | Densify recommends purchasing reserved instance coverage for this instance. |
+| implementation_method | The system configured to allow automated or manual recommendations. |
 | current_cpu_request | The current CPU request configured for the Kubernetes container. |
 | recommended_cpu_request | The recommended CPU request for the Kubernetes container. |
 | current_cpu_limit | The current CPU limit configured for the Kubernetes container. |
@@ -77,6 +77,7 @@ module "optimization-as-code" {
 | max_group_recommended | The recommended maximum group size for the ASG. |
 | min_group | The minimum group size to be implemented, which is either the current minimum group size or the Densify recommended minimum group size depending on the automation policy and approval status (if approval is enabled). |
 | max_group | The maximum group size to be implemented, which is either the current maximum group size or the Densify recommended maximum group size depending on the automation policy and approval status (if approval is enabled). |
+| avg_inst_count_current | The current average number of instances running in the ASG. |
 | avg_inst_count_recommended | The predicted average number of instances running in the ASG if the recommendations are implemented. |
 | current_desired_capacity | The current desired number of instances running in the ASG. |
 | desired_capacity | The desired capacity to be implemented, which is either the current desired capacity or the recommended average instance count (rounded down) depending on the automation policy and approval status (if approval is enabled). |
@@ -85,6 +86,15 @@ module "optimization-as-code" {
 | namespace | The namespace for the running container. |
 | pod_service | The pod or service name that the container is running in. If the container is running in a single pod, then the pod name is displayed. If the container is part of a service, such as a Replication Controller or Replica Set, then the service name is displayed. |
 | container | The name of the container. |
+| controller_type | The type of the controller. |
+| current_size | The current number of copies of the controller that are running. The value will be 1 for individual pods. |
+| approval_type | The type of approval for this system (NA, All, Specific size). |
+| recommendation_type | The type of recommendation (Upsize, Downsize, Resize, Just Right). |
+| effort | The effort rating for implementing the recommendation. |
+| policy | The policy is used by the analysis. |
+| power_state | The power state of the instance. |
+| defer_recommendation | Defer recommending an instance type change until reserved instance coverage for this instance expires. |
+| defer_until | If deferRecommendation = yes, then the expiry date of the RI providing coverage for the current instance is returned. |
 
 ## License
 
