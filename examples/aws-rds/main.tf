@@ -16,7 +16,7 @@ resource "aws_db_instance" "create" {
   storage_type         = "gp2"
   engine               = "mysql"
   engine_version       = "5.7"
-  name                 = "mydb"
+  db_name              = "mydb"
   username             = "foo"
   password             = "foobarbaz"
   parameter_group_name = "default.mysql5.7"
@@ -31,12 +31,12 @@ resource "aws_db_instance" "create" {
   # tag instance to make it Self-Aware these tags are optional and can set as few or as many as you like.
   tags = {
     Name = var.name
-	Current-instance-type = module.densify.current_type
+	  Current-instance-type = module.densify.current_type
     Densify-optimal-instance-type = module.densify.recommended_type
     Densify-potential-monthly-savings = module.densify.savings_estimate
     Densify-predicted-uptime = module.densify.predicted_uptime
     #Should match the densify_unique_id value as this is how Densify references the system as unique
-	Densify-Unique-ID = var.name
+	  Densify-Unique-ID = var.name
   }
  
 }

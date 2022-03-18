@@ -4,6 +4,10 @@ This example creates a single Azure Virtual Machine instance named "test" from s
 It also sets a number of tags on the VM instance to make it "self-aware".
 The sample densify_recommendations map found in this directory is in the same format that Densify would provide.
 
+## Prerequisites
+
+Install and configure Azure CLI.
+
 ## Usage
 
 To run this example you need to execute:
