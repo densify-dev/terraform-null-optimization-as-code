@@ -37,7 +37,7 @@ resource "kubernetes_pod" "test-pod" {
         container_port = 80
       }
 	  resources {
-	    requests {
+	    requests = {
 		  # normal way of sizing an instance by hardcoding the size.
 		  #cpu = "50m"
 		  #memory = "256Mi"
@@ -45,7 +45,7 @@ resource "kubernetes_pod" "test-pod" {
 		  cpu = module.densify.cpu_request
 		  memory = module.densify.mem_request
 		}
-		limits {
+		limits = {
 		  # normal way of sizing an instance by hardcoding the size.
 		  #cpu = "500m"
 		  #memory = "512Mi"
