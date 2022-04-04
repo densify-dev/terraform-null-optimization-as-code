@@ -4,6 +4,14 @@ This example creates a single Auto Scaling group (ASG) named "test" from the siz
 It also assigns a number of tags to the ASG, making it "self-aware".
 Densify provide recommendations in terraform-map format similar to the sample densify_recommendations map found in this directory.  
 
+## Prerequisites
+
+Install and configure AWS CLI.
+
+```bash
+$ aws configure
+```
+
 ## Usage
 
 To run this example, you need to execute:
