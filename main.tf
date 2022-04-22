@@ -6,8 +6,26 @@ locals {
   )
 
   densify_spec               = contains(keys(var.densify_recommendations),var.densify_unique_id) ? var.densify_recommendations[var.densify_unique_id] : var.densify_fallback
-  cur_type                   = lookup(local.densify_spec, "currentType", "na")
-  rec_type                   = lookup(local.densify_spec, "recommendedType", "na")
+  # cur_type                   = lookup(local.densify_spec, "currentType", "na")
+  # rec_type                   = lookup(local.densify_spec, "recommendedType", "na")
+  # replace the azure vm type with the proper casing from the lookup object
+  cur_type_original                   = lookup(local.densify_spec, "currentType", "na")
+  rec_type_original                   = lookup(local.densify_spec, "recommendedType", "na")
+  cur_type = format(
+        replace(local.cur_type_original, "/^(${join("|", keys(local.densify_azure_vmsize_lookup))})$/", "%s"),
+        [
+          for value in flatten(regexall("^(${join("|", keys(local.densify_azure_vmsize_lookup))})$", local.cur_type_original)) :
+            lookup(local.densify_azure_vmsize_lookup, value)
+        ]...
+      )
+  rec_type = format(
+        replace(local.rec_type_original, "/^(${join("|", keys(local.densify_azure_vmsize_lookup))})$/", "%s"),
+        [
+          for value in flatten(regexall("^(${join("|", keys(local.densify_azure_vmsize_lookup))})$", local.rec_type_original)) :
+            lookup(local.densify_azure_vmsize_lookup, value)
+        ]...
+      )
+
   savings                    = lookup(local.densify_spec, "savingsEstimate", "na")
   p_uptime                   = lookup(local.densify_spec, "predictedUptime", "na")
   implementation_method      = lookup(local.densify_spec, "implementationMethod", "na")  
