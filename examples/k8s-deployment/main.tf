@@ -55,16 +55,16 @@ resource "kubernetes_deployment" "test-deployment" {
               #cpu = "50m"
               #memory = "256Mi"
               # new self-optimizing instance type from Densify
-              cpu = module.densify.cpu_request
-              memory = module.densify.mem_request
+              cpu = module.densify.cpu_limit
+              memory = module.densify.mem_limit
             }
             requests = {
               # normal way of sizing an instance by hardcoding the size.
               #cpu = "500m"
               #memory = "512Mi"
               # new self-optimizing instance type from Densify
-              cpu = module.densify.cpu_limit
-              memory = module.densify.mem_limit
+              cpu = module.densify.cpu_request
+              memory = module.densify.mem_request
             }
           }
         }
